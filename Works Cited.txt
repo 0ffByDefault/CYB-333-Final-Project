@@ -1,0 +1,13 @@
+https://www.tutorialspoint.com/how-do-i-call-a-variable-from-another-function-in-python#:~:text=To%20summarize%2C%20when%20it%20comes,requirements%20of%20the%20specific%20scenario.
+
+https://www.tutorialspoint.com/how-do-i-call-a-variable-from-another-function-in-python#:~:text=To%20summarize%2C%20when%20it%20comes,requirements%20of%20the%20specific%20scenario.
+
+https://biot.com/capstats/bpf.html
+
+https://stackoverflow.com/questions/59914585/scapy-packet-filtering-from-an-ip-and-with-destination-port-23
+
+https://dev.to/powerexploit/let-s-ping-the-network-with-python-scapy-5g18
+
+https://scapy.readthedocs.io/en/latest/usage.html#
+
+https://www.packetswitch.co.uk/how-to-ping-sweep-your-network-with-python/#:~:text=To%20perform%20the%20ping%20sweep,it%20to%20send%20ping%20requests.
