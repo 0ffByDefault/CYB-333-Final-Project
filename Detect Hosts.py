@@ -26,7 +26,7 @@ def get_host_info():
     file = open('arp.txt')
     for line in file: #Loop through the arp table data to find the default gateway MAC address
         line = line.strip()
-        if line.startswith(str(default_gateway[1])) == True: #Here we use the previously defined IP address of the default gateway to locate its MAC address
+        if line.startswith(str(default_gateway[0])) == True: #Here we use the previously defined IP address of the default gateway to locate its MAC address
             words = line.split() #Split the line into words
             dg_mac.append(words[1]) #Append the MAC address to our dg_mac list item
             break #I only allow this loop to run once because there are multiple entries for the default gateway IP in the ARP table data
@@ -54,8 +54,10 @@ def discovery_scan(subnet): #This function actually works and will return active
         ip = str(ip) #Turn the IP into a string rather than ipaddress object
         test = ping3.ping(ip) #Send an ICMP echo request to the IP address
 
-        if test != None: #If the ping returns anything but None, which is what happens when the host doesn't respond add it to the list of active hosts
+        if test != False: #If the ping returns anything but None, which is what happens when the host doesn't respond add it to the list of active hosts
             active_hosts.append(ip)
+        else:
+            continue
 
 
 def spoof_discovery_scan(subnet):
@@ -78,5 +80,6 @@ def spoof_discovery_scan(subnet):
     
 
 
-get_host_info() #Gatheer the ip address and MAC address of default gateway
-discovery_scan('192.168.0.0/29') #Send spoofed packets and monitor the hosts response
+#get_host_info() #Gather the ip address and MAC address of default gateway
+discovery_scan('192.168.0.0/27') #Send ICMP echo requests to the host
+print(active_hosts)
